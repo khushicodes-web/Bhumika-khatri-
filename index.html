@@ -183,38 +183,27 @@
     function switchMainCert(imgSrc, title, pillEl) {
       const mainImg = document.getElementById('mainCertImg');
       
-      // Error count reset for new image attempt
       mainImg.dataset.tryIndex = "0";
       mainImg.src = imgSrc;
       mainImg.alt = title;
 
-      // Active pill styling update
       const pills = document.querySelectorAll('.ref-pill');
       pills.forEach(p => p.classList.remove('active-pill'));
-      pillEl.classList.add('active-pill');
+      if (pillEl) pillEl.classList.add('active-pill');
     }
 
-    // Smart Multi-Format Fallback Handler
     function handleImageError(imgEl) {
-      const originalSrc = decodeURIComponent(imgEl.src);
+      let currentSrc = decodeURIComponent(imgEl.src);
       let tryIndex = parseInt(imgEl.dataset.tryIndex || "0");
       imgEl.dataset.tryIndex = tryIndex + 1;
 
-      // Base filename without extension
-      let basePath = originalSrc.substring(0, originalSrc.lastIndexOf('.')) || originalSrc;
-
-      // List of possible extensions/naming variations
-      const formats = ['.jpeg', '.jpg', '.png', '.JPG', '.JPEG', '.PNG'];
-
-      if (tryIndex < formats.length) {
-        imgEl.src = basePath + formats[tryIndex];
-      } else if (tryIndex === formats.length) {
-        // Hyphenated version try Karein (e.g., great-learning-certificate)
-        let hyphenPath = basePath.toLowerCase().replace(/\s+/g, '-');
-        imgEl.src = hyphenPath + '.jpeg';
-      } else if (tryIndex === formats.length + 1) {
-        let hyphenPath = basePath.toLowerCase().replace(/\s+/g, '-');
-        imgEl.src = hyphenPath + '.jpg';
+      // GitHub repo file name handling for double extensions (.jpeg.jpeg)
+      if (currentSrc.includes('Great learning certificate') && tryIndex === 0) {
+        imgEl.src = currentSrc.replace('Great learning certificate.jpeg', 'Great learning certificate.jpeg.jpeg');
+      } else if (currentSrc.endsWith('.jpeg')) {
+        imgEl.src = currentSrc.replace('.jpeg', '.jpg');
+      } else if (currentSrc.endsWith('.jpg')) {
+        imgEl.src = currentSrc.replace('.jpg', '.png');
       }
     }
 
