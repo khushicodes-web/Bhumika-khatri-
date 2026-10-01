@@ -462,6 +462,66 @@ body {
 }
 
 /* ==========================================
+   EDUCATION STYLES INSIDE QUALIFICATIONS
+   ========================================== */
+.edu-block {
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px dashed #cbd5e1;
+}
+
+.edu-heading {
+  font-family: 'Inter', sans-serif !important;
+  font-size: 0.85rem !important;
+  font-weight: 800 !important;
+  color: #1a2b4c !important;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.edu-heading i {
+  color: #c84168;
+}
+
+.edu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.edu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f8fafc;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #e2e8f0;
+}
+
+.edu-main {
+  font-size: 0.72rem;
+  color: #334155;
+}
+
+.edu-main strong {
+  color: #1a2b4c;
+}
+
+.edu-date {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #2b8a6e;
+  background: #e6f4f1;
+  padding: 2px 6px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+/* ==========================================
    WHAT I LOVE DOING STYLES (EXACT COLORFUL MATCH)
    ========================================== */
 .love-doing-card {
@@ -778,6 +838,12 @@ body {
     transform: none;
     margin: 0 auto;
     height: 200px;
+  }
+
+  .edu-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
   }
 
   .work-grid {
