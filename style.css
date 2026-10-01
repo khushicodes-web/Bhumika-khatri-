@@ -295,6 +295,49 @@ body {
   pointer-events: none;
 }
 
+/* ==========================================
+   A BIT ABOUT ME STYLES
+   ========================================== */
+.about-me-container {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.quote-box {
+  background-color: #fde8ed;
+  border-radius: 12px;
+  padding: 15px 12px;
+  width: 42%;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.quote-box p {
+  color: #c23366;
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.about-text-content {
+  width: 58%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.about-text-content p {
+  font-size: 0.7rem;
+  color: #475569;
+  line-height: 1.4;
+  margin: 0;
+}
+
 /* QUALIFICATIONS CARD (REFERENCE LAYOUT DESIGN) */
 .qualifications {
   position: relative;
@@ -418,32 +461,41 @@ body {
   box-shadow: 2px 2px 0px #7a1c1c;
 }
 
-/* Brand Badges */
-.badge-row {
+/* ==========================================
+   WHAT I LOVE DOING STYLES
+   ========================================== */
+.skills-category-group {
   display: flex;
-  gap: 6px;
-  justify-content: center;
-  width: 100%;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 10px;
 }
 
-.badge-item {
-  width: 26px;
-  height: 26px;
+.skill-cat h3 {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #1a2b4c;
+  margin-bottom: 6px;
+  font-family: 'Inter', sans-serif;
+}
+
+.pill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.pill-tags span {
   background: #ffffff;
   border: 1.5px solid #1a2b4c;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.7rem;
   color: #1a2b4c;
-  box-shadow: 1.5px 1.5px 0px #1a2b4c;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.65rem;
+  font-weight: 600;
+  box-shadow: 1px 1px 0px #1a2b4c;
+  white-space: nowrap;
 }
-
-.badge-item.google { color: #4285f4; }
-.badge-item.hubspot { color: #ff7a59; }
-.badge-item.meta { color: #0668e1; }
-.badge-item.harvard { color: #a51c30; }
 
 /* WORK INCLUDES CARD */
 .work-grid {
@@ -660,6 +712,14 @@ body {
 
   .img-side {
     margin: 0 auto;
+  }
+
+  .about-me-container {
+    flex-direction: column;
+  }
+
+  .quote-box, .about-text-content {
+    width: 100%;
   }
 
   .qualifications {
