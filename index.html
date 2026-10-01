@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bhumika Khatri | Content & Community Manager</title>
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- Fonts: Bebas Neue, Caveat, Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Caveat:wght@600&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+  <div class="page-container">
+    
+    <!-- TOP HERO SECTION -->
+    <header class="hero-section">
+      <div class="nav-bar">
+        <div class="brand-name">BHUMIKA KHATRI</div>
+        <div class="nav-links">
+          <a href="#work">MY WORK</a>
+          <a href="#case-study">CASE STUDY</a>
+          <a href="#experience">EXPERIENCE</a>
+          <a href="#contact">CONTACT</a>
+        </div>
+      </div>
+
+      <div class="hero-body">
+        <div class="hero-left">
+          <p class="hero-intro">
+            <strong class="highlight-text">Driving Engagement & Growth.</strong><br>
+            2+ years crafting high-converting captions, viral short-form videos, and high-impact community campaigns.
+          </p>
+        </div>
+
+        <div class="hero-center">
+          <h1 class="main-title">CONTENT & COMMUNITY<span class="star-icon">✻</span></h1>
+          <div class="hero-img-wrapper">
+            <img src="photo.png" alt="Bhumika Khatri" class="cutout-img">
+            <span class="script-overlay">Manager</span>
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <a href="https://bhumikakhatri.com" class="web-link">BHUMIKAKHATRI.COM</a>
+          <div class="social-icons">
+            <a href="https://linkedin.com/in/bhumika-khatri" target="_blank" title="LinkedIn">
+              <i class="fa-brands fa-linkedin"></i>
+            </a>
+            <a href="mailto:bhumika.khatri888@gmail.com" title="Email">
+              <i class="fa-solid fa-envelope"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- GRID CARDS SECTION -->
+    <main class="grid-layout">
+
+      <!-- CARD 1: WHO AM I -->
+      <section class="card who-am-i">
+        <div class="card-dots">• • •</div>
+        <h2>WHO AM I</h2>
+        <div class="card-content">
+          <div class="text-side">
+            <p>Manage a 50+ member ambassador network, ran 12+ community events that lifted member engagement by 28%.</p>
+            <div class="stats-row">
+              <div class="stat-box"><strong>50+</strong> Network</div>
+              <div class="stat-box"><strong>28%</strong> Growth</div>
+              <div class="stat-box"><strong>2+Yrs</strong> Exp</div>
+            </div>
+            <div class="brand-pills">
+              <span>Shiksha.com</span>
+              <span>Narayan Events</span>
+              <span>Promaynov</span>
+            </div>
+          </div>
+          <!-- Outer Box Frame -->
+          <div class="img-side">
+            <div class="img-frame">
+              <img src="who.png" onerror="if(this.src.endsWith('who.png')){this.src='who.jpg';}else if(this.src.endsWith('who.jpg')){this.src='who.jpeg';}" alt="Bhumika">
+            </div>
+            <span class="frame-star">✻</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- CARD 2: QUALIFICATIONS (UPDATED REFERENCE DESIGN) -->
+      <section class="card qualifications">
+        <div class="card-dots">• • •</div>
+        <h2 class="qual-title">QUALIFICATIONS</h2>
+        
+        <div class="qual-content-ref">
+          
+          <!-- LEFT DISPLAY: REAL CERTIFICATE IMAGE FRAME (BADGES REMOVED) -->
+          <div class="qual-left-cert">
+            <div class="cert-frame-box" onclick="openCertModal(document.getElementById('mainCertImg').src, document.getElementById('mainCertImg').alt)">
+              <img id="mainCertImg" src="Harvard performance management.jpeg" alt="Harvard ManageMentor - Performance Measurement">
+              <div class="cert-ribbon-tag"><i class="fa-solid fa-ribbon"></i></div>
+            </div>
+          </div>
+
+          <!-- CENTER STANDING CUTOUT PHOTO -->
+          <div class="qual-img-center">
+            <img src="qualification-photo.png" alt="Bhumika Cutout">
+          </div>
+
+          <!-- RIGHT SIDE: PILLS STACK BUTTONS -->
+          <div class="qual-pills-right">
+            <div class="ref-pill active-pill" onclick="switchMainCert('Harvard performance management.jpeg', 'Harvard ManageMentor - Performance Measurement', this)">
+              Harvard - Performance
+            </div>
+            <div class="ref-pill" onclick="switchMainCert('Harvard develping employees.jpeg', 'Harvard ManageMentor - Developing Employees', this)">
+              Harvard - Developing
+            </div>
+            <div class="ref-pill" onclick="switchMainCert('Harvard Writing skills.jpeg', 'Harvard ManageMentor - Writing Skills', this)">
+              Harvard - Writing Skills
+            </div>
+            <div class="ref-pill" onclick="switchMainCert('Udemy certificate.jpeg', 'Udemy - Employee Engagement', this)">
+              Udemy - Employee Eng.
+            </div>
+            <div class="ref-pill" onclick="switchMainCert('Great learning certificate.jpeg', 'Great Learning - People Management', this)">
+              Great Learning - Mgmt
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- CARD 3: MY WORK INCLUDES -->
+      <section class="card work-includes">
+        <div class="card-dots">• • •</div>
+        <h2><span class="star">★</span> MY WORK INCLUDES</h2>
+        <div class="work-grid">
+          <div class="work-item">
+            <div class="work-thumb">CAPTION & COPY</div>
+            <p>Short-form Video & Reels</p>
+          </div>
+          <div class="work-item">
+            <div class="work-thumb">COMMUNITY</div>
+            <p>Ambassador Management</p>
+          </div>
+          <div class="work-item">
+            <div class="work-thumb">ANALYTICS</div>
+            <p>MS Excel & Dashboards</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- CARD 4: CASE STUDY -->
+      <section class="card case-study">
+        <div class="card-dots">• • •</div>
+        <h2>CASE STUDY</h2>
+        <p class="subtitle">COMMUNITY ENGAGEMENT CAMPAIGN</p>
+        <div class="case-box">
+          <p>Ran 12+ online & offline events for Narayan Events, resulting in a <strong>28% increase</strong> in active member participation.</p>
+        </div>
+        <div class="case-gallery">
+          <div class="gal-img">Event Reel 01</div>
+          <div class="gal-img">Event Reel 02</div>
+          <div class="gal-img">Metrics Dashboard</div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- CERTIFICATE LIGHTBOX MODAL -->
+  <div id="certModal" class="cert-modal" onclick="closeCertModal()">
+    <span class="modal-close">&times;</span>
+    <div class="modal-wrapper" onclick="event.stopPropagation()">
+      <h3 id="modalTitle">Certificate</h3>
+      <img id="modalImg" src="" alt="Certificate Preview">
+    </div>
+  </div>
+
+  <!-- LIGHTBOX & SWITCHER SCRIPT -->
+  <script>
+    function switchMainCert(imgSrc, title, pillEl) {
+      const mainImg = document.getElementById('mainCertImg');
+      mainImg.src = imgSrc;
+      mainImg.alt = title;
+
+      // Update Active Pill Styling
+      const pills = document.querySelectorAll('.ref-pill');
+      pills.forEach(p => p.classList.remove('active-pill'));
+      pillEl.classList.add('active-pill');
+    }
+
+    function openCertModal(imageSrc, titleText) {
+      const modal = document.getElementById('certModal');
+      const modalImg = document.getElementById('modalImg');
+      const modalTitle = document.getElementById('modalTitle');
+      
+      modalImg.src = imageSrc;
+      modalTitle.innerText = titleText;
+      modal.style.display = 'flex';
+    }
+
+    function closeCertModal() {
+      document.getElementById('certModal').style.display = 'none';
+    }
+  </script>
+
+</body>
+</html>
