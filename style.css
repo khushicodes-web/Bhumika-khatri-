@@ -462,39 +462,73 @@ body {
 }
 
 /* ==========================================
-   WHAT I LOVE DOING STYLES
+   WHAT I LOVE DOING STYLES (MATCHED DESIGN)
    ========================================== */
+.love-doing-card {
+  padding: 28px 25px;
+}
+
+.soft-title {
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 800 !important;
+  font-size: 1.6rem !important;
+  color: #1c2738 !important;
+  letter-spacing: -0.5px !important;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  text-transform: none !important;
+}
+
 .skills-category-group {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  margin-top: 10px;
+  gap: 18px;
 }
 
 .skill-cat h3 {
-  font-size: 0.78rem;
-  font-weight: 700;
-  color: #1a2b4c;
-  margin-bottom: 6px;
   font-family: 'Inter', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+  margin-bottom: 10px;
 }
 
+/* Category Specific Pastel Colors */
+.skill-cat .cat-green {
+  color: #2e8b73;
+}
+
+.skill-cat .cat-pink {
+  color: #d14d72;
+}
+
+.skill-cat .cat-purple {
+  color: #6b52a1;
+}
+
+/* Soft Modern Pills Layout */
 .pill-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
+  gap: 8px;
 }
 
 .pill-tags span {
   background: #ffffff;
-  border: 1.5px solid #1a2b4c;
-  color: #1a2b4c;
-  padding: 4px 8px;
-  border-radius: 12px;
-  font-size: 0.65rem;
-  font-weight: 600;
-  box-shadow: 1px 1px 0px #1a2b4c;
+  border: 1px solid #e2e8f0;
+  color: #334155;
+  padding: 7px 14px;
+  border-radius: 20px;
+  font-size: 0.72rem;
+  font-weight: 500;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+  transition: all 0.2s ease;
   white-space: nowrap;
+}
+
+.pill-tags span:hover {
+  border-color: #cbd5e1;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
 }
 
 /* WORK INCLUDES CARD */
