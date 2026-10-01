@@ -79,10 +79,10 @@
               <span>Promaynov</span>
             </div>
           </div>
-          <!-- Outer Box Frame -->
+          <!-- Outer Box Frame (FIXED filename to who.jpeg) -->
           <div class="img-side">
             <div class="img-frame">
-              <img src="who.png" onerror="handleImageError(this)" alt="Bhumika">
+              <img src="who.jpeg" alt="Bhumika">
             </div>
             <span class="frame-star">✻</span>
           </div>
@@ -182,7 +182,6 @@
   <script>
     function switchMainCert(imgSrc, title, pillEl) {
       const mainImg = document.getElementById('mainCertImg');
-      
       mainImg.dataset.tryIndex = "0";
       mainImg.src = imgSrc;
       mainImg.alt = title;
@@ -197,7 +196,6 @@
       let tryIndex = parseInt(imgEl.dataset.tryIndex || "0");
       imgEl.dataset.tryIndex = tryIndex + 1;
 
-      // GitHub repo file name handling for double extensions (.jpeg.jpeg)
       if (currentSrc.includes('Great learning certificate') && tryIndex === 0) {
         imgEl.src = currentSrc.replace('Great learning certificate.jpeg', 'Great learning certificate.jpeg.jpeg');
       } else if (currentSrc.endsWith('.jpeg')) {
