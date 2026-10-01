@@ -82,7 +82,7 @@
           <!-- Outer Box Frame -->
           <div class="img-side">
             <div class="img-frame">
-              <img src="who.png" onerror="if(this.src.endsWith('who.png')){this.src='who.jpg';}else if(this.src.endsWith('who.jpg')){this.src='who.jpeg';}" alt="Bhumika">
+              <img src="who.png" onerror="handleImageError(this)" alt="Bhumika">
             </div>
             <span class="frame-star">✻</span>
           </div>
@@ -99,7 +99,7 @@
           <!-- LEFT DISPLAY: REAL CERTIFICATE IMAGE FRAME -->
           <div class="qual-left-cert">
             <div class="cert-frame-box" onclick="openCertModal(document.getElementById('mainCertImg').src, document.getElementById('mainCertImg').alt)">
-              <img id="mainCertImg" src="harvard-performance.jpeg" onerror="handleImageError(this)" alt="Harvard ManageMentor - Performance Measurement">
+              <img id="mainCertImg" src="Harvard performance management.jpeg" onerror="handleImageError(this)" alt="Harvard ManageMentor - Performance Measurement">
               <div class="cert-ribbon-tag"><i class="fa-solid fa-ribbon"></i></div>
             </div>
           </div>
@@ -111,19 +111,19 @@
 
           <!-- RIGHT SIDE: PILLS STACK BUTTONS -->
           <div class="qual-pills-right">
-            <div class="ref-pill active-pill" onclick="switchMainCert('harvard-performance.jpeg', 'Harvard ManageMentor - Performance Measurement', this)">
+            <div class="ref-pill active-pill" onclick="switchMainCert('Harvard performance management.jpeg', 'Harvard ManageMentor - Performance Measurement', this)">
               Harvard - Performance
             </div>
-            <div class="ref-pill" onclick="switchMainCert('harvard-developing.jpeg', 'Harvard ManageMentor - Developing Employees', this)">
+            <div class="ref-pill" onclick="switchMainCert('Harvard develping employees.jpeg', 'Harvard ManageMentor - Developing Employees', this)">
               Harvard - Developing
             </div>
-            <div class="ref-pill" onclick="switchMainCert('harvard-writing.jpeg', 'Harvard ManageMentor - Writing Skills', this)">
+            <div class="ref-pill" onclick="switchMainCert('Harvard Writing skills.jpeg', 'Harvard ManageMentor - Writing Skills', this)">
               Harvard - Writing Skills
             </div>
-            <div class="ref-pill" onclick="switchMainCert('udemy-certificate.jpeg', 'Udemy - Employee Engagement', this)">
+            <div class="ref-pill" onclick="switchMainCert('Udemy certificate.jpeg', 'Udemy - Employee Engagement', this)">
               Udemy - Employee Eng.
             </div>
-            <div class="ref-pill" onclick="switchMainCert('great-learning.jpeg', 'Great Learning - People Management', this)">
+            <div class="ref-pill" onclick="switchMainCert('Great learning certificate.jpeg', 'Great Learning - People Management', this)">
               Great Learning - Mgmt
             </div>
           </div>
@@ -182,21 +182,39 @@
   <script>
     function switchMainCert(imgSrc, title, pillEl) {
       const mainImg = document.getElementById('mainCertImg');
+      
+      // Error count reset for new image attempt
+      mainImg.dataset.tryIndex = "0";
       mainImg.src = imgSrc;
       mainImg.alt = title;
 
-      // Update Active Pill Styling
+      // Active pill styling update
       const pills = document.querySelectorAll('.ref-pill');
       pills.forEach(p => p.classList.remove('active-pill'));
       pillEl.classList.add('active-pill');
     }
 
-    // Auto-fallback agar `.jpeg` vs `.jpg` vs `.png` me extension Mismatch ho
+    // Smart Multi-Format Fallback Handler
     function handleImageError(imgEl) {
-      if (imgEl.src.endsWith('.jpeg')) {
-        imgEl.src = imgEl.src.replace('.jpeg', '.jpg');
-      } else if (imgEl.src.endsWith('.jpg')) {
-        imgEl.src = imgEl.src.replace('.jpg', '.png');
+      const originalSrc = decodeURIComponent(imgEl.src);
+      let tryIndex = parseInt(imgEl.dataset.tryIndex || "0");
+      imgEl.dataset.tryIndex = tryIndex + 1;
+
+      // Base filename without extension
+      let basePath = originalSrc.substring(0, originalSrc.lastIndexOf('.')) || originalSrc;
+
+      // List of possible extensions/naming variations
+      const formats = ['.jpeg', '.jpg', '.png', '.JPG', '.JPEG', '.PNG'];
+
+      if (tryIndex < formats.length) {
+        imgEl.src = basePath + formats[tryIndex];
+      } else if (tryIndex === formats.length) {
+        // Hyphenated version try Karein (e.g., great-learning-certificate)
+        let hyphenPath = basePath.toLowerCase().replace(/\s+/g, '-');
+        imgEl.src = hyphenPath + '.jpeg';
+      } else if (tryIndex === formats.length + 1) {
+        let hyphenPath = basePath.toLowerCase().replace(/\s+/g, '-');
+        imgEl.src = hyphenPath + '.jpg';
       }
     }
 
