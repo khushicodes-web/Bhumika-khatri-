@@ -89,17 +89,17 @@
         </div>
       </section>
 
-      <!-- CARD 2: QUALIFICATIONS (UPDATED REFERENCE DESIGN) -->
+      <!-- CARD 2: QUALIFICATIONS -->
       <section class="card qualifications">
         <div class="card-dots">• • •</div>
         <h2 class="qual-title">QUALIFICATIONS</h2>
         
         <div class="qual-content-ref">
           
-          <!-- LEFT DISPLAY: REAL CERTIFICATE IMAGE FRAME (BADGES REMOVED) -->
+          <!-- LEFT DISPLAY: REAL CERTIFICATE IMAGE FRAME -->
           <div class="qual-left-cert">
             <div class="cert-frame-box" onclick="openCertModal(document.getElementById('mainCertImg').src, document.getElementById('mainCertImg').alt)">
-              <img id="mainCertImg" src="Harvard performance management.jpeg" alt="Harvard ManageMentor - Performance Measurement">
+              <img id="mainCertImg" src="harvard-performance.jpeg" onerror="handleImageError(this)" alt="Harvard ManageMentor - Performance Measurement">
               <div class="cert-ribbon-tag"><i class="fa-solid fa-ribbon"></i></div>
             </div>
           </div>
@@ -111,19 +111,19 @@
 
           <!-- RIGHT SIDE: PILLS STACK BUTTONS -->
           <div class="qual-pills-right">
-            <div class="ref-pill active-pill" onclick="switchMainCert('Harvard performance management.jpeg', 'Harvard ManageMentor - Performance Measurement', this)">
+            <div class="ref-pill active-pill" onclick="switchMainCert('harvard-performance.jpeg', 'Harvard ManageMentor - Performance Measurement', this)">
               Harvard - Performance
             </div>
-            <div class="ref-pill" onclick="switchMainCert('Harvard develping employees.jpeg', 'Harvard ManageMentor - Developing Employees', this)">
+            <div class="ref-pill" onclick="switchMainCert('harvard-developing.jpeg', 'Harvard ManageMentor - Developing Employees', this)">
               Harvard - Developing
             </div>
-            <div class="ref-pill" onclick="switchMainCert('Harvard Writing skills.jpeg', 'Harvard ManageMentor - Writing Skills', this)">
+            <div class="ref-pill" onclick="switchMainCert('harvard-writing.jpeg', 'Harvard ManageMentor - Writing Skills', this)">
               Harvard - Writing Skills
             </div>
-            <div class="ref-pill" onclick="switchMainCert('Udemy certificate.jpeg', 'Udemy - Employee Engagement', this)">
+            <div class="ref-pill" onclick="switchMainCert('udemy-certificate.jpeg', 'Udemy - Employee Engagement', this)">
               Udemy - Employee Eng.
             </div>
-            <div class="ref-pill" onclick="switchMainCert('Great learning certificate.jpeg', 'Great Learning - People Management', this)">
+            <div class="ref-pill" onclick="switchMainCert('great-learning.jpeg', 'Great Learning - People Management', this)">
               Great Learning - Mgmt
             </div>
           </div>
@@ -132,7 +132,7 @@
       </section>
 
       <!-- CARD 3: MY WORK INCLUDES -->
-      <section class="card work-includes">
+      <section class="card work-includes" id="work">
         <div class="card-dots">• • •</div>
         <h2><span class="star">★</span> MY WORK INCLUDES</h2>
         <div class="work-grid">
@@ -152,7 +152,7 @@
       </section>
 
       <!-- CARD 4: CASE STUDY -->
-      <section class="card case-study">
+      <section class="card case-study" id="case-study">
         <div class="card-dots">• • •</div>
         <h2>CASE STUDY</h2>
         <p class="subtitle">COMMUNITY ENGAGEMENT CAMPAIGN</p>
@@ -189,6 +189,15 @@
       const pills = document.querySelectorAll('.ref-pill');
       pills.forEach(p => p.classList.remove('active-pill'));
       pillEl.classList.add('active-pill');
+    }
+
+    // Auto-fallback agar `.jpeg` vs `.jpg` vs `.png` me extension Mismatch ho
+    function handleImageError(imgEl) {
+      if (imgEl.src.endsWith('.jpeg')) {
+        imgEl.src = imgEl.src.replace('.jpeg', '.jpg');
+      } else if (imgEl.src.endsWith('.jpg')) {
+        imgEl.src = imgEl.src.replace('.jpg', '.png');
+      }
     }
 
     function openCertModal(imageSrc, titleText) {
