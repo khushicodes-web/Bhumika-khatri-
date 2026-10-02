@@ -6,8 +6,8 @@
   <title>Bhumika Khatri | Content & Community Manager</title>
   <link rel="stylesheet" href="style.css">
   
-  <!-- Fonts: Bebas Neue, Caveat, Inter -->
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Caveat:wght@600&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <!-- Fonts: Bebas Neue, Caveat, Inter, Plus Jakarta Sans -->
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Caveat:wght@600&family=Inter:wght@300;400;600;700&family=Plus+Jakarta+Sans:wght@800&display=swap" rel="stylesheet">
   
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -146,10 +146,10 @@
         </div>
       </section>
 
-      <!-- CARD 4: WHAT I LOVE DOING (EXACT COLORFUL MATCH) -->
+      <!-- CARD 4: WHAT I LOVE DOING (EXTRA BOLD HEADING) -->
       <section class="card love-doing-card">
         <div class="card-dots">• • •</div>
-        <h2 class="soft-title">💛 What I love doing</h2>
+        <h2 class="soft-title-bold">💛 What I love doing</h2>
         
         <div class="skills-category-group">
           <!-- Teal Green Category -->
@@ -187,23 +187,41 @@
         </div>
       </section>
 
-      <!-- CARD 5: MY WORK INCLUDES -->
+      <!-- CARD 5: MY WORK INCLUDES (WITH MEDIA ATTACHMENTS) -->
       <section class="card work-includes" id="work">
         <div class="card-dots">• • •</div>
         <h2><span class="star">★</span> MY WORK INCLUDES</h2>
         <div class="work-grid">
+          
+          <!-- 1. CAPTION & COPY (Autoplay Video) -->
           <div class="work-item">
-            <div class="work-thumb">CAPTION & COPY</div>
+            <div class="work-thumb video-box">
+              <video autoplay loop muted playsinline src="caption-video.mp4"></video>
+              <div class="video-overlay-title">CAPTION & COPY</div>
+            </div>
             <p>Short-form Video & Reels</p>
           </div>
+
+          <!-- 2. COMMUNITY (Autoplay Video) -->
           <div class="work-item">
-            <div class="work-thumb">COMMUNITY</div>
+            <div class="work-thumb video-box">
+              <video autoplay loop muted playsinline src="community-video.mp4"></video>
+              <div class="video-overlay-title">COMMUNITY</div>
+            </div>
             <p>Ambassador Management</p>
           </div>
-          <div class="work-item">
-            <div class="work-thumb">ANALYTICS</div>
-            <p>MS Excel & Dashboards</p>
-          </div>
+
+          <!-- 3. ANALYTICS (Report Link) -->
+          <a href="Video Analytics.html" target="_blank" class="work-item-link">
+            <div class="work-item">
+              <div class="work-thumb pdf-thumb">
+                <i class="fa-solid fa-chart-line pdf-icon"></i>
+                <span>ANALYTICS</span>
+              </div>
+              <p>MS Excel & Dashboards</p>
+            </div>
+          </a>
+
         </div>
       </section>
 
