@@ -223,7 +223,7 @@
         </div>
       </section>
 
-      <!-- CARD 6: CASE STUDY -->
+      <!-- CARD 6: CASE STUDY (WITH UPLOADED REEL & DASHBOARD PHOTOS) -->
       <section class="card case-study" id="case-study">
         <div class="card-dots">• • •</div>
         <h2>CASE STUDY</h2>
@@ -232,21 +232,43 @@
           <p>Ran 12+ online & offline events for Narayan Events, resulting in a <strong>28% increase</strong> in active member participation.</p>
         </div>
         <div class="case-gallery">
-          <div class="gal-img">Event Reel 01</div>
-          <div class="gal-img">Event Reel 02</div>
-          <div class="gal-img">Metrics Dashboard</div>
+          
+          <!-- Photo 1: Event Reel 01 -->
+          <div class="gal-item" onclick="openCertModal('reel1.jpeg.jpeg', 'Event Reel 01')">
+            <div class="gal-img-box">
+              <img src="reel1.jpeg.jpeg" alt="Event Reel 01">
+            </div>
+            <span>Event Reel 01</span>
+          </div>
+
+          <!-- Photo 2: Event Reel 02 -->
+          <div class="gal-item" onclick="openCertModal('reel2.jpeg.jpeg', 'Event Reel 02')">
+            <div class="gal-img-box">
+              <img src="reel2.jpeg.jpeg" alt="Event Reel 02">
+            </div>
+            <span>Event Reel 02</span>
+          </div>
+
+          <!-- Photo 3: Metrics Dashboard -->
+          <div class="gal-item" onclick="openCertModal('dashboard.jpeg.jpeg', 'Metrics Dashboard')">
+            <div class="gal-img-box">
+              <img src="dashboard.jpeg.jpeg" alt="Metrics Dashboard">
+            </div>
+            <span>Metrics Dashboard</span>
+          </div>
+
         </div>
       </section>
 
     </main>
   </div>
 
-  <!-- CERTIFICATE LIGHTBOX MODAL -->
+  <!-- CERTIFICATE & PHOTO LIGHTBOX MODAL -->
   <div id="certModal" class="cert-modal" onclick="closeCertModal()">
     <span class="modal-close">&times;</span>
     <div class="modal-wrapper" onclick="event.stopPropagation()">
-      <h3 id="modalTitle">Certificate</h3>
-      <img id="modalImg" src="" alt="Certificate Preview">
+      <h3 id="modalTitle">Preview</h3>
+      <img id="modalImg" src="" alt="Preview">
     </div>
   </div>
 
@@ -286,7 +308,7 @@
       }
     }
 
-    /* Certificate Modal Functions */
+    /* Certificate & Photo Modal Functions */
     function openCertModal(imageSrc, titleText) {
       const modal = document.getElementById('certModal');
       const modalImg = document.getElementById('modalImg');
@@ -308,7 +330,7 @@
       const modalTitle = document.getElementById('videoModalTitle');
 
       modalVideo.src = videoSrc;
-      modalVideo.muted = false; // Turn on audio on click
+      modalVideo.muted = false; // Enable Audio
       modalTitle.innerText = titleText;
       modal.style.display = 'flex';
       modalVideo.play();
