@@ -191,7 +191,7 @@ body {
   border-radius: 12px;
   position: relative;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
-  overflow: hidden; /* Prevent items inside cards from blowing up layout */
+  overflow: hidden;
 }
 
 .card-dots {
@@ -518,7 +518,7 @@ body {
 }
 
 /* ==========================================
-   WHAT I LOVE DOING STYLES (FIXED BOLD HEADING FONT)
+   WHAT I LOVE DOING STYLES
    ========================================== */
 .love-doing-card {
   padding: 28px 25px;
@@ -551,18 +551,9 @@ body {
   margin-bottom: 10px;
 }
 
-.skill-cat h3.cat-teal,
-.skill-cat h3.cat-green {
-  color: #2b8a6e !important;
-}
-
-.skill-cat h3.cat-pink {
-  color: #c84168 !important;
-}
-
-.skill-cat h3.cat-purple {
-  color: #6b52a1 !important;
-}
+.skill-cat h3.cat-teal { color: #2b8a6e !important; }
+.skill-cat h3.cat-pink { color: #c84168 !important; }
+.skill-cat h3.cat-purple { color: #6b52a1 !important; }
 
 .pill-tags {
   display: flex;
@@ -589,7 +580,7 @@ body {
 }
 
 /* ==========================================
-   MY WORK INCLUDES CARD (STRICT VIDEO BOUNDARIES)
+   MY WORK INCLUDES CARD (CLICKABLE VIDEO THUMBNAILS)
    ========================================== */
 .work-grid {
   display: grid;
@@ -607,6 +598,12 @@ body {
 
 .work-item {
   width: 100%;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.work-item:hover {
+  transform: translateY(-2px);
 }
 
 /* Strict Container Frame for Thumbnails */
@@ -623,7 +620,7 @@ body {
   justify-content: center;
 }
 
-/* Video Constraint Fix - Prevents blowing up screen */
+/* Video Constraint inside Grid (Pure Video, No Text Overlay) */
 .video-box video {
   position: absolute !important;
   top: 0 !important;
@@ -634,30 +631,6 @@ body {
   max-height: 100% !important;
   object-fit: cover !important;
   pointer-events: none;
-}
-
-.video-overlay-title {
-  position: absolute !important;
-  top: 0;
-  left: 0;
-  z-index: 2;
-  background: rgba(26, 43, 76, 0.65);
-  width: 100% !important;
-  height: 100% !important;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #ffffff;
-  font-weight: 700;
-  font-size: 0.75rem;
-  letter-spacing: 0.5px;
-  transition: background 0.2s ease;
-  padding: 6px;
-  text-align: center;
-}
-
-.video-box:hover .video-overlay-title {
-  background: rgba(26, 43, 76, 0.25);
 }
 
 /* PDF Box Styling */
@@ -671,7 +644,7 @@ body {
   gap: 6px;
   font-size: 0.75rem;
   font-weight: 700;
-  transition: transform 0.2s ease, background 0.2s ease;
+  transition: background 0.2s ease;
 }
 
 .pdf-icon {
@@ -681,7 +654,6 @@ body {
 
 .work-item-link:hover .pdf-thumb {
   background: #2b3a4e;
-  transform: translateY(-2px);
 }
 
 .work-item p {
@@ -725,7 +697,9 @@ body {
   border-radius: 4px;
 }
 
-/* CERTIFICATE LIGHTBOX MODAL */
+/* ==========================================
+   LIGHTBOX MODALS (CERTIFICATE & VIDEO WITH SOUND)
+   ========================================== */
 .cert-modal {
   display: none;
   position: fixed;
@@ -751,6 +725,11 @@ body {
   box-shadow: 0 20px 30px rgba(0, 0, 0, 0.4);
   border: 1.5px solid #1a2b4c;
   animation: modalScale 0.25s ease-out;
+  position: relative;
+}
+
+.video-modal-wrapper {
+  max-width: 420px; /* Perfect aspect ratio for Reels/Vertical Short-form Video */
 }
 
 .modal-wrapper h3 {
@@ -769,15 +748,25 @@ body {
   border: 1px solid #e2e8f0;
 }
 
+.modal-video-element {
+  width: 100%;
+  max-height: 70vh;
+  border-radius: 8px;
+  background: #000;
+  display: block;
+  outline: none;
+}
+
 .modal-close {
   position: absolute;
-  top: 20px;
-  right: 30px;
+  top: 15px;
+  right: 25px;
   color: #ffffff;
   font-size: 36px;
   font-weight: bold;
   cursor: pointer;
   transition: transform 0.2s ease;
+  z-index: 10000;
 }
 
 .modal-close:hover {
@@ -813,10 +802,7 @@ body {
     gap: 12px;
   }
 
-  .brand-name {
-    width: 100%;
-    text-align: center;
-  }
+  .brand-name { width: 100%; text-align: center; }
 
   .nav-links {
     width: 100%;
@@ -831,23 +817,10 @@ body {
     gap: 25px;
   }
 
-  .hero-left {
-    max-width: 100%;
-  }
-
-  .main-title {
-    font-size: 3rem;
-  }
-
-  .hero-img-wrapper,
-  .hero-img-box {
-    margin-top: 0;
-  }
-
-  .script-overlay {
-    font-size: 3.2rem;
-    bottom: -15px;
-  }
+  .hero-left { max-width: 100%; }
+  .main-title { font-size: 3rem; }
+  .hero-img-wrapper, .hero-img-box { margin-top: 0; }
+  .script-overlay { font-size: 3.2rem; bottom: -15px; }
 
   .hero-right {
     text-align: center;
@@ -855,9 +828,7 @@ body {
     gap: 10px;
   }
 
-  .social-icons {
-    justify-content: center;
-  }
+  .social-icons { justify-content: center; }
 
   .grid-layout {
     grid-template-columns: 1fr;
@@ -869,26 +840,12 @@ body {
     text-align: center;
   }
 
-  .stats-row {
-    justify-content: center;
-    flex-wrap: wrap;
-  }
+  .stats-row { justify-content: center; flex-wrap: wrap; }
+  .img-side { margin: 0 auto; }
+  .about-me-container { flex-direction: column; }
+  .quote-box, .about-text-content { width: 100%; }
 
-  .img-side {
-    margin: 0 auto;
-  }
-
-  .about-me-container {
-    flex-direction: column;
-  }
-
-  .quote-box, .about-text-content {
-    width: 100%;
-  }
-
-  .qualifications {
-    overflow: hidden;
-  }
+  .qualifications { overflow: hidden; }
 
   .qual-content-ref {
     flex-direction: column;
@@ -896,10 +853,7 @@ body {
     min-height: auto;
   }
 
-  .qual-left-cert,
-  .qual-pills-right {
-    width: 100%;
-  }
+  .qual-left-cert, .qual-pills-right { width: 100%; }
 
   .qual-img-center {
     position: relative;
@@ -916,25 +870,12 @@ body {
     gap: 4px;
   }
 
-  .work-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .case-gallery {
-    flex-direction: column;
-  }
+  .work-grid { grid-template-columns: repeat(2, 1fr); }
+  .case-gallery { flex-direction: column; }
 }
 
 @media screen and (max-width: 480px) {
-  .main-title {
-    font-size: 2.2rem;
-  }
-
-  .script-overlay {
-    font-size: 2.5rem;
-  }
-
-  .work-grid {
-    grid-template-columns: 1fr;
-  }
+  .main-title { font-size: 2.2rem; }
+  .script-overlay { font-size: 2.5rem; }
+  .work-grid { grid-template-columns: 1fr; }
 }
