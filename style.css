@@ -338,7 +338,7 @@ body {
   margin: 0;
 }
 
-/* QUALIFICATIONS CARD (REFERENCE LAYOUT DESIGN) */
+/* QUALIFICATIONS CARD */
 .qualifications {
   position: relative;
   overflow: visible;
@@ -362,7 +362,6 @@ body {
   min-height: 220px;
 }
 
-/* Left Real Certificate Display */
 .qual-left-cert {
   width: 42%;
   display: flex;
@@ -406,7 +405,6 @@ body {
   font-size: 0.75rem;
 }
 
-/* Center Cutout Photo */
 .qual-img-center {
   width: 160px;
   height: 245px;
@@ -429,7 +427,6 @@ body {
   display: block;
 }
 
-/* Right Stack Buttons */
 .qual-pills-right {
   width: 36%;
   display: flex;
@@ -461,9 +458,7 @@ body {
   box-shadow: 2px 2px 0px #7a1c1c;
 }
 
-/* ==========================================
-   EDUCATION STYLES INSIDE QUALIFICATIONS
-   ========================================== */
+/* EDUCATION STYLES INSIDE QUALIFICATIONS */
 .edu-block {
   margin-top: 18px;
   padding-top: 14px;
@@ -522,21 +517,24 @@ body {
 }
 
 /* ==========================================
-   WHAT I LOVE DOING STYLES (EXACT COLORFUL MATCH)
+   WHAT I LOVE DOING STYLES (FIXED BOLD HEADING FONT)
    ========================================== */
 .love-doing-card {
   padding: 28px 25px;
 }
 
-.soft-title {
-  font-family: 'Inter', sans-serif !important;
+.love-doing-card h2,
+.soft-title,
+.soft-title-bold {
+  font-family: 'Plus Jakarta Sans', 'Inter', sans-serif !important;
   font-weight: 800 !important;
-  font-size: 1.5rem !important;
+  font-size: 1.45rem !important;
   color: #1c2738 !important;
-  letter-spacing: -0.5px !important;
+  letter-spacing: -0.4px !important;
   margin-top: 5px;
   margin-bottom: 20px;
   text-transform: none !important;
+  line-height: 1.2 !important;
 }
 
 .skills-category-group {
@@ -552,21 +550,19 @@ body {
   margin-bottom: 10px;
 }
 
-/* Color Classes Forced Overrides */
 .skill-cat h3.cat-teal,
 .skill-cat h3.cat-green {
-  color: #2b8a6e !important; /* Teal Green */
+  color: #2b8a6e !important;
 }
 
 .skill-cat h3.cat-pink {
-  color: #c84168 !important; /* Pastel Rose Pink */
+  color: #c84168 !important;
 }
 
 .skill-cat h3.cat-purple {
-  color: #6b52a1 !important; /* Soft Purple */
+  color: #6b52a1 !important;
 }
 
-/* Soft Modern Pills Layout */
 .pill-tags {
   display: flex;
   flex-wrap: wrap;
@@ -591,31 +587,94 @@ body {
   transform: translateY(-1px);
 }
 
-/* WORK INCLUDES CARD */
+/* ==========================================
+   MY WORK INCLUDES CARD (FIXED THUMBNAIL BOXES)
+   ========================================== */
 .work-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
+  gap: 12px;
+}
+
+.work-item-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
 }
 
 .work-thumb {
+  position: relative;
+  overflow: hidden;
+  height: 110px !important; /* Fixed card height */
+  border-radius: 8px;
   background: #1a2b4c;
-  color: #fff;
-  height: 70px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.65rem;
+}
+
+/* Autoplay Video Styling */
+.video-box video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.video-overlay-title {
+  position: relative;
+  z-index: 2;
+  background: rgba(26, 43, 76, 0.65);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
   font-weight: 700;
-  border-radius: 4px;
+  font-size: 0.75rem;
+  letter-spacing: 0.5px;
+  transition: background 0.2s ease;
+  padding: 6px;
   text-align: center;
-  padding: 4px;
+}
+
+.video-box:hover .video-overlay-title {
+  background: rgba(26, 43, 76, 0.35);
+}
+
+/* PDF Box Styling */
+.pdf-thumb {
+  background: #1a2b4c;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.pdf-icon {
+  font-size: 1.4rem;
+  color: #60a5fa;
+}
+
+.work-item-link:hover .pdf-thumb {
+  background: #2b3a4e;
+  transform: translateY(-2px);
 }
 
 .work-item p {
   font-size: 0.7rem;
-  margin-top: 5px;
-  color: #444;
+  margin-top: 6px;
+  color: #475569;
+  font-weight: 500;
+  text-align: center;
 }
 
 /* CASE STUDY CARD */
@@ -651,9 +710,7 @@ body {
   border-radius: 4px;
 }
 
-/* ==========================================
-   CERTIFICATE LIGHTBOX MODAL STYLES 
-   ========================================== */
+/* CERTIFICATE LIGHTBOX MODAL */
 .cert-modal {
   display: none;
   position: fixed;
@@ -724,9 +781,7 @@ body {
   }
 }
 
-/* ==========================================
-   MOBILE RESPONSIVE MEDIA QUERIES
-   ========================================== */
+/* MOBILE RESPONSIVE MEDIA QUERIES */
 @media screen and (max-width: 768px) {
   body {
     padding: 15px 10px;
